@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>Firebase Authentication</title>
+    <link rel="stylesheet" href="cssFile.css">
+</head>
+
+<body>
+    <div id="login-box">
+        <div class="left">
+            <h1 id='status'>Inscription</h1>
+            <input type="text" id="email" name="email" placeholder="E-mail" />
+            <input type="password" id="password" name="password" placeholder="Password" />
+            <input type="text" id="username" name="username" placeholder="username" />
+            <input type="submit" id="signup" name="signup_submit" value="Sign up" />
+
+
+        </div>
+
+        <div class="right">
+            <span class="loginwith">Sign in with<br />social network</span>
+            <button class="social-signin facebook">Inscris toi avec Facebook</button>
+            <button class="social-signin twitter">Inscris toi avec Twitter</button>
+            <button class="social-signin google">Inscris toi avec Google+</button>
+            <button onclick="window.location.href='login.html';">Connexion</button>
+        </div>
+        <div class="or">OU</div>
+    </div>
+
+    <script type="module">
+        // Importer les fonctions dont on a besoin à partir des SDK nécessaires
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+
+        // Configuration de l'application Firebase
+        const firebaseConfig = {
+            // Détails de configuration Firebase
+            apiKey: "AIzaSyCNoprLBa03L5WRVzTXEba9C0mLo228KmQ",
+            authDomain: "projet-web-3e062.firebaseapp.com",
+            projectId: "projet-web-3e062",
+            storageBucket: "projet-web-3e062.appspot.com",
+            messagingSenderId: "904685228500",
+            appId: "1:904685228500:web:34581b299895a211618641"
+        };
+
+        // Initialiser Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth();
+
+        // Écouteur d'événement pour le bouton d'inscription
+        const signup = document.getElementById('signup');
+
+        signup.addEventListener('click', (e) => {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var username = document.getElementById('username').value;
+
+            // Créer un utilisateur avec l'e-mail et le mot de passe
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Connexion réussie
+                    const user = userCredential.user;
+                    // Stocker les détails de l'utilisateur dans la base de données
+                    set(ref(database, 'users/' + user.uid), {
+                        username: username,
+                        email: email
+                    })
+                    // Afficher un message de succès
+                    alert('Votre compte a bien ete cree ! Veuillez retourner sur la page du site. ');
+                })
+                .catch((error) => {
+                    // Gérer les erreurs lors de l'inscription
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                });
+        });
+
+    </script>
+</body>
+
+</html>

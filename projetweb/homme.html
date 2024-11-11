@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>GYM eirb</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="web.css">
+  <link rel="stylesheet" href="demo.css">
+</head>
+<!-- Import des bibliothèques de polices et de styles -->
+<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+  integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  integrity="sha512-A+V2OJZCe+tKUGwsX9dGKjDQ1ySjsNz+zJIn11jqu1zOX47/wcw4/4WTbMz9ptLOPp+8y52/jq1m2QjVuB5nQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<body>
+  <header>
+    <!-- Header avec la barre de navigation -->
+    <nav class="navbar navbar-expand mx-auto d-flex  justify-content-center  ">
+      <ul class="navbar-nav align-items-center">
+        <div>
+          <a class="navbar-brand text-dark logo " href="web.html">
+            <img src="logo.jpg" alt="Logo" width="50" height="50">
+            <strong>Gymeirb</strong></a>
+        </div>
+        <li class="nav-item">
+          <a class="nav-link" href="homme.html">HOMMES</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="femme.html">FEMMES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="accessoire.html"> ACCESSOIRES </a>
+        </li>
+
+        <li class="nav-item ">
+          <form class="d-flex">
+            <!-- Formulaire de recherche -->
+            <input type="text" placeholder="Recherche..">
+          </form>
+        </li>
+        <li class="nav-item ms-auto login">
+          <a href="login.html">
+            <i class='bx bxs-user-account'></i>
+          </a>
+        </li>
+        <li>
+          <!-- Panier -->
+          <nav class="nav-item dim ">
+            <div class="row">
+              <div class="col">
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#cart">Cart (<span
+                    class="total-count"></span>)</button><button class="clear-cart btn btn-default">Clear Cart</button>
+              </div>
+            </div>
+          </nav>
+
+        </li>
+      </ul>
+    </nav>
+    <hr>
+  </header>
+  <!-- Section d'accueil -->
+  <section id="accueil1">
+    <h1>Nos favoris de la nouvelle saison </h1>
+    <p>Explorez notre collection aujourd'hui et commencez à vous entraîner comme un pro!"</p>
+
+    <button type="button" onclick="window.location.href='web.html';" class="btn  btn-lg">ACHETER</button>
+  </section>
+  <div class="recommend">
+    <h1>TRAINING ESSENTIALS</h1>
+  </div>
+  <div class="shell">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img">
+              <img src="sweat.jpg" alt="Product" class="img-responsive" />
+            </div>
+            <div class="wsk-cp-text">
+              <div class="category  ">
+                <span>sweat</span>
+              </div>
+              <div class="card-footer add-to-bag-btn">
+                <div class="wcf-left"><span class="price">19.99$</span></div>
+                <div class="wcf-right">
+                  <a href="#" class="buy-btn add-to-cart"><i class="zmdi zmdi-shopping-basket"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="pull.jpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+              <div class="category">
+                <span>T-Shirt</span>
+              </div>
+              <div class="card-footer add-to-bag-btn">
+                <div class="wcf-left"><span class="price">20$</span></div>
+                <div class="wcf-right">
+                  <a href="#" class="buy-btn add-to-cart"><i class="zmdi zmdi-shopping-basket"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="joging.jpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+              <div class="category">
+                <span>jogging</span>
+              </div>
+              <div class="card-footer  add-to-bag-btn ">
+                <div class="wcf-left"><span class="price">30$</span></div>
+                <div class="wcf-right"><a href="#" class="buy-btn add-to-cart"><i
+                      class="zmdi zmdi-shopping-basket"></i></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="pantallan.jpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+              <div class="category">
+                <span>short de basket</span>
+              </div>
+              <div class="card-footer  add-to-bag-btn">
+                <div class="wcf-left"><span class="price">25$</span></div>
+                <div class="wcf-right"><a href="#" class="buy-btn add-to-cart"><i
+                      class="zmdi zmdi-shopping-basket"></i></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="shell">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img">
+              <img src="T-shirt.jpg" alt="Product" class="img-responsive" />
+            </div>
+            <div class="wsk-cp-text">
+              <div class="category  ">
+                <span>T-shirt</span>
+              </div>
+              <div class="card-footer add-to-bag-btn">
+                <div class="wcf-left"><span class="price">19.99$</span></div>
+                <div class="wcf-right">
+                  <a href="#" class="buy-btn add-to-cart"><i class="zmdi zmdi-shopping-basket"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="top.jpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+              <div class="category">
+                <span>débardeur</span>
+              </div>
+              <div class="card-footer add-to-bag-btn">
+                <div class="wcf-left"><span class="price">15.99$</span></div>
+                <div class="wcf-right">
+                  <a href="#" class="buy-btn add-to-cart"><i class="zmdi zmdi-shopping-basket"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="short.jpeg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+              <div class="category">
+                <span>short</span>
+              </div>
+              <div class="card-footer  add-to-bag-btn ">
+                <div class="wcf-left"><span class="price">30$</span></div>
+                <div class="wcf-right"><a href="#" class="buy-btn add-to-cart"><i
+                      class="zmdi zmdi-shopping-basket"></i></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="polo.jpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+              <div class="category">
+                <span>polo</span>
+              </div>
+              <div class="card-footer  add-to-bag-btn">
+                <div class="wcf-left"><span class="price">25$</span></div>
+                <div class="wcf-right"><a href="#" class="buy-btn add-to-cart"><i
+                      class="zmdi zmdi-shopping-basket"></i></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lien vers informations du site et descriptions (certains retournent vers la page d'accueil parce que on a pas fait une vraie marque avec un facebook insta etc) -->
+  <div class="footer-dark">
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-3 item">
+            <h3>Aide</h3>
+            <ul>
+              <li><a href="#">Politique des Retours</a></li>
+              <li><a href="#">Informations de Livraison</a></li>
+              <li><a href="#">Signaler une imitation</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3 item">
+            <h3>About</h3>
+            <ul>
+              <li><a href="#">Gymeirb Central </a></li>
+              <li><a href="#">À propos de nous</a></li>
+              <li><a href="#">Carrière</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 item text">
+            <h3>Gymeirb</h3>
+            <p>Les produits de GymEIRB sont conçus en tenant compte des besoins des sportifs. Ils sont fabriqués à
+              partir de matériaux de haute qualité qui offrent une excellente respirabilité, une liberté de mouvement
+              optimale et une durabilité exceptionnelle. Que vous pratiquiez la musculation, le cardio, le yoga ou
+              d'autres activités sportives, GymEIRB propose des vêtements adaptés à chaque discipline.</p>
+          </div>
+          <div class="col item social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+
+        </div>
+        <p class="copyright">Gymeirb © 2023</p>
+      </div>
+    </footer>
+  </div>
+  <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="show-cart table">
+
+          </table>
+          <div>Total price: $<span class="total-cart"></span></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Order now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>

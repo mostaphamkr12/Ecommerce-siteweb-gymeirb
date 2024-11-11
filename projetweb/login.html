@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>Firebase Authentication</title>
+    <link rel="stylesheet" href="cssFile.css">
+</head>
+
+<body>
+    <div id="login-box">
+        <div class="left">
+            <h1 id='status'>Connexion</h1>
+            <input type="text" id="email" name="email" placeholder="E-mail" />
+            <input type="password" id="password" name="password" placeholder="Password" />
+            <input type="submit" id="login" name="login" value="Login" />
+
+
+        </div>
+
+        <div class="right">
+            <span class="loginwith">Connexion avec <br />reseaux sociaux</span>
+            <button class="social-signin facebook">Connecte toi avec Facebook</button>
+            <button class="social-signin twitter">Connecte toi avec Twitter</button>
+            <button class="social-signin google">Connecte toi avec Google+</button>
+            <button onclick="window.location.href='signup.html';">Inscription</button>
+        </div>
+        <div class="or">OU</div>
+    </div>
+
+    <script type="module">
+        // Importer les fonctions dont vous avez besoin à partir des SDK nécessaires
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+
+        // Configuration de l'application Firebase
+        const firebaseConfig = {
+            // Détails de configuration Firebase
+            apiKey: "AIzaSyCNoprLBa03L5WRVzTXEba9C0mLo228KmQ",
+            authDomain: "projet-web-3e062.firebaseapp.com",
+            projectId: "projet-web-3e062",
+            storageBucket: "projet-web-3e062.appspot.com",
+            messagingSenderId: "904685228500",
+            appId: "1:904685228500:web:34581b299895a211618641"
+        };
+
+        // Initialisation de Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth();
+
+        // Écouteur d'événement pour le bouton de connexion
+        login.addEventListener('click', (e) => {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Connexion avec l'e-mail et le mot de passe
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Connexion réussie
+                    const user = userCredential.user;
+                    const dt = new Date();
+                    // Mettre à jour la dernière connexion de l'utilisateur dans la base de données
+                    update(ref(database, 'users/' + user.uid), {
+                        last_login: dt,
+                    })
+                    // Afficher un message de succès
+                    alert('Vous etes connecte ! Veuillez retourner sur la page du site. ');
+
+                })
+                .catch((error) => {
+                    // Gérer les erreurs lors de la connexion
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                });
+
+        })
+    </script>
+</body>
+
+</html>
